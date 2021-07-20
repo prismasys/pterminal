@@ -9,7 +9,7 @@ function httpGet(theUrl)
 function loadCartels()
 {
 
-    url = "http://127.0.0.1:5000/mission/"
+    url = "https://prismaterminal.herokuapp.com/mission/"
 
     console.log('Loading Cartels M8!')
 
@@ -28,7 +28,7 @@ function loadCartels()
 function loadCartelsIndex()
 {
 
-    url = "http://127.0.0.1:5000/mission/index/%";
+    url = "https://prismaterminal.herokuapp.com/mission/index/%";
 
     var jsn = '{"index":%}'
 
@@ -56,7 +56,7 @@ function loadCartelsIndex()
 function loadAllCartels()
 {
 
-    url = "http://127.0.0.1:5000/mission/all/";
+    url = "https://prismaterminal.herokuapp.com/mission/all/";
 
     console.log('oh goooosh kiddo, you give hard work today doncha?');
 
