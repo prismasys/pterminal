@@ -1,0 +1,8 @@
+feedparser
+HTMLParser
+bs4
+requests
+gunicorn
+flask
+flask-cors
+flask-restful
