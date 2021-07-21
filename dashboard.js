@@ -44,52 +44,12 @@ function logout() {
 }
 
 function doforecast() {
-  var x = document.getElementById("vainaloca").value;
 
+  // var result = httpGet(res);
 
-
-
-
-  url = 'https://ada-ai-forecast-sys.herokuapp.com/predict/'
-  urlextfr = 'https://ada-ai-forecast-sys.herokuapp.com/extended/'
-  basegetdiffurl = 'https://ada-ai-forecast-sys.herokuapp.com/getdiff/'
-  basetrendurl = 'https://ada-ai-forecast-sys.herokuapp.com/trendcalc/'
-
-  var res = url.concat(x);
-  var urlextfrx = urlextfr.concat(x);
-  var getdiffurl = basegetdiffurl.concat(x);
-  var gettrendurl = basetrendurl.concat(x);
-
-
-  var result = httpGet(res);
-
-
-
-  document.getElementById("SymbolTitle").innerHTML = x;
-
-  
-  document.getElementById("compa").style.opacity = "1.0";
-
-
-
-
-  var datav2;
-  var gt;
-
-  fetch(urlextfrx)
-  .then(response => response.json())
-  .then(datav2 => dochart(datav2, gettrendurl));
-
-  dodiffchart(getdiffurl)
-
-  fetch(gettrendurl)
-  .then(response => response.json())
-  .then(datatrend => giveSignals(urlextfrx, datatrend));
-
-  fetch(urlextfrx)
-  .then(response => response.json())
-  .then(datav2 => doeverychart(datav2, gettrendurl,'littleChart'));
-
+  // ASYNC DEV
+  asyncresquestchart();
+  // ASYNC DEV END
 
 }
 
@@ -357,4 +317,66 @@ function removeData(chart) {
         dataset.data.pop();
     });
     chart.update();
+}
+
+function asyncresquestchart(){
+
+    url = 'https://ada-ai-forecast-sys.herokuapp.com/predict/'
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+
+        var x = document.getElementById("vainaloca").value;
+
+
+        url = 'https://ada-ai-forecast-sys.herokuapp.com/predict/'
+        urlextfr = 'https://ada-ai-forecast-sys.herokuapp.com/extended/'
+        basegetdiffurl = 'https://ada-ai-forecast-sys.herokuapp.com/getdiff/'
+        basetrendurl = 'https://ada-ai-forecast-sys.herokuapp.com/trendcalc/'
+
+        var res = url.concat(x);
+        var urlextfrx = urlextfr.concat(x);
+        var getdiffurl = basegetdiffurl.concat(x);
+        var gettrendurl = basetrendurl.concat(x);
+
+
+        console.log(xhr.responseText);
+
+        var result = xhr.responseText;
+
+        document.getElementById("SymbolTitle").innerHTML = x;
+
+
+          document.getElementById("compa").style.opacity = "1.0";
+
+
+          var datav2;
+          var gt;
+
+          fetch(urlextfrx)
+          .then(response => response.json())
+          .then(datav2 => dochart(datav2, gettrendurl));
+
+          dodiffchart(getdiffurl)
+
+          fetch(gettrendurl)
+          .then(response => response.json())
+          .then(datatrend => giveSignals(urlextfrx, datatrend));
+
+          fetch(urlextfrx)
+          .then(response => response.json())
+          .then(datav2 => doeverychart(datav2, gettrendurl,'littleChart'));
+        } else {
+          console.error(xhr.statusText);
+        }
+      }
+    };
+    xhr.onerror = function (e) {
+      console.error(xhr.statusText);
+    };
+    xhr.send(null);
 }
