@@ -28,7 +28,6 @@ function asyncresquest(url){
 
 function refreshADA (){
 
-    document.getElementById('ada-status').innerHTML = "🟠";
 
     apiurl = "https://ada-ai-forecast-sys.herokuapp.com/";
 
@@ -37,6 +36,8 @@ function refreshADA (){
 }
 
 function asyncrefresh (url, idapi){
+
+    document.getElementById(idapi).innerHTML = "🟠";
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
@@ -60,12 +61,19 @@ function asyncrefresh (url, idapi){
 
 function refreshsnk (){
 
-    document.getElementById('snk-status').innerHTML = "🟠";
-
     apiurl = "https://sneakers-app-api.herokuapp.com/init/refreshing-motiv";
 
     asyncrefresh(apiurl, 'snk-status');
 
+
+
+}
+
+function refreshbh (){
+
+    apiurl = "https://prismaterminal.herokuapp.com/mission/all/";
+
+    asyncrefresh(apiurl, 'bh-status');
 
 
 }

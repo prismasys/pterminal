@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68ad477e-436b-433d-a408-d3278445a6d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/environments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bounty-hunter.html" beforeDir="false" afterPath="$PROJECT_DIR$/bounty-hunter.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/bountyhunter.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/bountyhunter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environments.html" beforeDir="false" afterPath="$PROJECT_DIR$/environments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/env.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
