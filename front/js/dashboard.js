@@ -79,9 +79,7 @@ function doforecast() {
 
   dodiffchart(getdiffurl)
 
-  fetch(gettrendurl)
-  .then(response => response.json())
-  .then(datatrend => giveSignals(urlextfrx, datatrend));
+
 
   fetch(urlextfrx)
   .then(response => response.json())

@@ -60,16 +60,33 @@ function loadAllCartels()
 
     console.log('oh goooosh kiddo, you give hard work today doncha?');
 
+    asyncloadcartel(url)
 
-    cartelraw = httpGet(url);
+}
 
-    var cartel = JSON.parse(cartelraw);
+function asyncloadcartel(url){
 
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onload = function (e) {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log(xhr.responseText);
+          var cartel = JSON.parse(xhr.responseText);
 
-    console.log(cartel);
+          console.log(cartel);
 
-    loadcarteldiv(cartel);
+          loadcarteldiv(cartel);
 
+        } else {
+          console.error(xhr.statusText);
+        }
+      }
+    };
+    xhr.onerror = function (e) {
+      console.error(xhr.statusText);
+    };
+    xhr.send(null);
 }
 
 function loadcarteldiv(cartel){

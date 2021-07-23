@@ -25,7 +25,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div id="jeder" class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <img src="./img/prisma-logo.png" alt="" class="logo"><span class="w3-bar-item w3-right">Prisma Terminal</span>
+  <span class="w3-bar-item w3-right">Prisma Terminal</span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -47,10 +47,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>   Prisma Terminal</a>
+    <a href="dashboard.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-dashboard fa-fw"></i>   ADA</a>
     <a href="bounty-hunter.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Bounty Hunter</a>
+    <a href="chat.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-comments-o fa-fw"></i>  Chat Rooms</a>
+    <a href="environments.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cubes fa-fw"></i>  Environments</a>
 
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+
+    <a href="settings.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
     <a onclick="logout()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  Logout</a>
   </div>
 </nav>
@@ -68,9 +71,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <div class="mdl-shadow--2dp w3-container w3-dark-grey w3-padding-32">
     <header class="w3-container" style="padding-top:0px">
-      <h5><b><i class="fa fa-dashboard"></i> Forecast Computation Terminal</b></h5>
-    </header>
-    <div  class="w3-container">
+      <h5><b><i class="fa fa-dashboard"></i> ADA Forecast</b></h5>
+      <div  class="w3-container">
       <h5>Enter symbol</h5>
       <div id='vainaloca2' class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <input id='vainaloca' class="mdl-textfield__input" type="text" >
@@ -87,6 +89,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <div class="w3-bottombar w3-border-pink"></div>
 
     </div>
+    </header>
+
 
   </div>
 
@@ -97,37 +101,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <p id="SymbolTitle">Waiting for computation...</p>
       <p id="results"></p>
       <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-        <canvas id="myChart" width="200" height="100"></canvas>
+        <canvas id="myChart" width="100%" height="100"></canvas>
       </div>
     </div>
     <hr>
     <div class="w3-panel">
       <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-third">
-          <h5>Regions</h5>
-          <div class="demo-card-event mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand">
-              <canvas id="littleChart" width="350" height="200"></canvas>
-            </div>
-          </div>
 
-        </div>
-        <div id="signals"class="w3-twothird">
-          <h5>Signals</h5>
-          <table class="mdl-data-table mdl-js-data-table">
-    <thead>
-      <tr>
-        <th class="mdl-data-table__cell--non-numeric">Check</th>
-        <th class="mdl-data-table__cell--non-numeric">Signal</th>
-        <th class="mdl-data-table__cell--non-numeric">From</th>
-        <th class="mdl-data-table__cell--non-numeric">To</th>
-      </tr>
-    </thead>
-    <tbody id="testBody">
 
-    </tbody>
-  </table>
-        </div>
       </div>
     </div>
     <hr>
@@ -170,7 +151,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>ADA1 Terminal</h4>
+
     <p>Powered by <a href="home.html" target="_blank">Prisma</a></p>
   </footer>
   <!-- End page content -->

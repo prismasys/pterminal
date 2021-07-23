@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <title>Prisma Terminal</title>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./css/styles.css">
@@ -14,12 +13,14 @@
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-purple.min.css" />
 <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
-<script src="./js/bountyhunter.js"></script>
+
 <script src="./js/dashboard.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .logo {max-width: 3%;
       margin:5px;}
+
+
 </style>
 <body onload="loaduser()" class="w3-light-grey">
 
@@ -49,10 +50,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-bar-block">
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
     <a href="dashboard.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-dashboard fa-fw"></i>   ADA</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bell fa-fw"></i>  Bounty Hunter</a>
-    <a href="chat.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-comments-o fa-fw"></i>  Chat Rooms</a>
+    <a href="bounty-hunter.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Bounty Hunter</a>
+    <a href="chat.html" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-comments-o fa-fw"></i>  Chat Rooms</a>
     <a href="environments.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cubes fa-fw"></i>  Environments</a>
-
 
 
     <a href="settings.html" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
@@ -73,44 +73,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <div class="mdl-shadow--2dp w3-container w3-dark-grey w3-padding-32">
     <header class="w3-container" style="padding-top:0px">
-      <h5><b><i class="fa fa-newspaper-o"></i> Prisma Bounty Hunter</b></h5>
+      <h5><b><i class="fa fa-comments-o"></i> Chat Rooms</b></h5>
     </header>
-    <div  class="w3-container">
-      <h5>Load cartels</h5>
-      <h6>Get the latests jobs from the web.</h6>
-      <p>There are always 30 missions, Machine Learning, Web-dev and some others.</p>
-
-      <button onclick="loadAllCartels()" id="computebutton"class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-  Load Cartels
-</button>
-
-      <br>
-      <br>
-
-      <div class="w3-bottombar w3-border-purple"></div>
-    </div>
-
-  </div>
-
-  <div id="" class="">
-
-    <div id="cartel-list" class="w3-container">
-
-    </div>
-
-    <div class="w3-panel">
-
-
-    </div>
-
-    <div class="w3-container">
-
-
-    </div>
-
 
 
   </div>
+
+
+    <div class="w3-purple">
+      <div id="chat-div" class="">
+    <object class="" id="chat-obj" type="text/html" data="https://node-ch4t-app.herokuapp.com/" width="100%" height="410px" style="overflow:auto;">
+    </object>
+ </div>
+
+    </div>
+
 
   <div class="w3-container w3-dark-grey w3-padding-32">
     <div class="w3-row">
@@ -139,7 +116,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Footer -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
 
-    <p><a href="https://prismasys.site" target="_blank">Prisma</a></p>
+    <p>Powered by <a href="home.html" target="_blank">Prisma</a></p>
   </footer>
   <!-- End page content -->
 </div>
