@@ -13,6 +13,7 @@ def subscribe(subscription):
     print('Sub saved to ', subtitle)
     return True
 
+
 def load_subscribers():
 
     arr = os.listdir('prisma/assets')
@@ -28,6 +29,7 @@ def load_subscribers():
         sublist.append(jsonObject)
     return sublist
 
+
 def pushnotif(sub):
 
     json_comp = {
@@ -38,8 +40,6 @@ def pushnotif(sub):
             'url': 'https://prismasys.site/'
         }
     }
-
-
 
     pushurl = 'https://bhpush.herokuapp.com/subscribedev'
 
@@ -90,3 +90,82 @@ def carteltosubs(title, subtitle, url):
         print('Notification Pushed!')
 
 
+def carteltopusher(title, subtitle, link):
+
+    qlink = link.replace('//','totona')
+    alink = qlink.replace('/', 'vagina')
+    klink = alink.replace(':','clitoris')
+    plink = klink.replace('.', 'pezon')
+
+    json_comp = {
+        'cartel': {
+            'title': title,
+            'subtitle': subtitle,
+            'url': plink
+        }
+    }
+
+    jco = {
+    "cartel": {
+        "title": title,
+        "subtitle": subtitle,
+      "url": plink
+    }
+}
+
+    url = 'http://127.0.0.1:5000/carteltosubs'
+
+    r = requests.get(url, json=jco)
+
+    print(r.text)
+
+    return True
+
+
+def msgtopusher(msg):
+
+    url = 'https://prismaterminal.herokuapp.com/msgtosubs/{}'.format(msg)
+
+    r = requests.get(url)
+
+    return True
+
+def carteltopusher2(title, subtitle, link):
+
+    qlink = link.replace('//', 'totona')
+    alink = qlink.replace('/', 'vagina')
+    klink = alink.replace(':', 'clitoris')
+    plink = klink.replace('.', 'pezon')
+    tlink = plink.replace('?', 'labia')
+
+    json_comp = {
+        'cartel': {
+            'title': title,
+            'subtitle': subtitle,
+            'url': tlink
+        }
+    }
+
+    jco = {
+    "cartel": {
+        "title": title,
+        "subtitle": subtitle,
+      "url": tlink
+    }
+}
+
+    pushurl = 'http://127.0.0.1:5000/carteltosubs/%'
+
+    strjco = json.dumps(jco)
+
+    print(jco['cartel']['url'])
+
+    print(strjco)
+
+    purl = pushurl.replace('%', strjco)
+
+    r = requests.get(purl)
+
+    print('Notification Pushed!')
+
+    return True

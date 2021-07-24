@@ -82,9 +82,22 @@ class CarteltoSubs(Resource):
 
         print(todo_id)
 
+        #qlink = todo_id.replace('totona', '//')
+        #alink = qlink.replace('vagina', '/')
+        #klink = qlink.replace('clitoris', ':')
+
         litecartel = json.loads(todo_id)
 
-        push.msgtosubs('Prisma Devs', litecartel['cartel']['title'])
+        print(litecartel)
+
+        aurl = litecartel['cartel']['url']
+        burl = aurl.replace('totona','//')
+        curl = burl.replace('vagina', '/')
+        durl = curl.replace('clitoris', ':')
+        eurl = durl.replace('pezon', '.')
+        furl = eurl.replace('labia', '?')
+
+        push.carteltosubs('Prisma Devs', litecartel['cartel']['title'], furl)
 
         return 'Cartel Sended'
 

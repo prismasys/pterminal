@@ -1,37 +1,9 @@
 import time
-
 import prisma.utils.push as push
 import prisma.api.cartelist as cartelist
 
-def carteltosubs():
 
-    x = cartel
-
-    print(x['cartel0'])
-
-    for i in range(x):
-        cartelname = 'cartel{}'.format(i)
-        print(x[cartelname]['title'])
-        tit = x[cartelname]['title']
-        print(x[cartelname]['link'])
-        push.pushcarteltosubs(tit, 'Click to apply')
-
-
-def cartelstosubs():
-
-    x = cartelist.getmissionsdict()
-
-    print(x['cartel0'])
-
-    for i in range(x):
-        cartelname = 'cartel{}'.format(i)
-        print(x[cartelname]['title'])
-        tit = x[cartelname]['title']
-        print(x[cartelname]['link'])
-        push.pushcarteltosubs(tit, 'Click to apply')
-
-
-def cartelworkertosubs():
+def cartelworker():
 
     print('PRISMA BOUNTY HUNTER SHERIFF\n')
     stop = 0
@@ -57,7 +29,7 @@ def cartelworkertosubs():
 
                 if auxcartel == x['cartel0']['title']:
                     print('Detected Same list')
-                    time.sleep(2)
+                    time.sleep(60)
                     continue
                 else:
                     auxcartel = x['cartel0']['title']
@@ -70,43 +42,16 @@ def cartelworkertosubs():
                         tit = x[cartelname]['title']
                         print(x[cartelname]['link'])
                         link = x[cartelname]['link']
-                        push.pushcarteltosubs(tit, 'Click to apply', link)
+                        push.carteltopusher2(tit, 'Click to apply', link)
 
 
         elif inpoot == 3:
             print('Enter message')
             msg = input()
-            push.pushmsgtosubs('Prisma Dev',msg)
+            push.msgtopusher(msg)
             continue
         else:
             continue
-
-def cartelworker():
-
-    print('PRISMA BOUNTY HUNTER SHERIFF\n')
-    stop = 0
-    auxcartel = []
-
-    while stop == 0:
-
-        x = cartelist.getmissionsdict()
-
-        if auxcartel == x['cartel0']['title']:
-            print('Detected Same list')
-            time.sleep(5)
-            continue
-        else:
-            auxcartel = x['cartel0']['title']
-
-            print(x['cartel0'])
-
-            for i in range(2):
-                cartelname = 'cartel{}'.format(i)
-                print(x[cartelname]['title'])
-                tit = x[cartelname]['title']
-                print(x[cartelname]['link'])
-                link = x[cartelname]['link']
-                push.pushcarteltosubs(tit, 'Click to apply', link)
 
 
 
