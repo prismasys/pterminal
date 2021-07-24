@@ -1,3 +1,5 @@
+from os import system, name
+
 import time
 import prisma.utils.push as push
 import prisma.api.cartelist as cartelist
@@ -53,7 +55,9 @@ def cartelworker():
         else:
             continue
 
-def soloworker():
+def soloworker(min):
+
+    secs = min*60
 
     print('PRISMA BOUNTY HUNTER SHERIFF\n')
     stop = 0
@@ -65,8 +69,8 @@ def soloworker():
 
         if auxcartel == x['cartel0']['title']:
             print('No more cartels! Waiting for more...\n')
-            print('Checking in the next 5 minutes...')
-            time.sleep(300)
+            print('Checking in the next {} minute(s)...'.format(min))
+            time.sleep(secs)
             continue
         else:
             print('I found a cartel!.\n')
