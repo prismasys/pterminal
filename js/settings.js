@@ -59,7 +59,7 @@ function asyncsub(sub){
 
     var tsub = JSON.stringify(sub);
 
-    var qurl = "http://127.0.0.1:5000/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     var url = qurl.replace('%',tsub);
 
