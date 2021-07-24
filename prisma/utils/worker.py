@@ -53,5 +53,33 @@ def cartelworker():
         else:
             continue
 
+def soloworker():
+
+    print('PRISMA BOUNTY HUNTER SHERIFF\n')
+    stop = 0
+    auxcartel = []
+
+    while stop == 0:
+
+        x = cartelist.getmissionsdict()
+
+        if auxcartel == x['cartel0']['title']:
+            print('No more cartels! Waiting for more...\n')
+            print('Checking in the next 5 minutes...')
+            time.sleep(300)
+            continue
+        else:
+            print('I found a cartel!.\n')
+            print('WANTED! Dead Or Alive.\n')
+            auxcartel = x['cartel0']['title']
+
+            for i in range(1):
+                cartelname = 'cartel{}'.format(i)
+                print(x[cartelname]['title'])
+                tit = x[cartelname]['title']
+                print(x[cartelname]['link'])
+                link = x[cartelname]['link']
+                push.carteltopusher2(tit, 'Click to apply', link)
+                print('Cartel Send!\n')
 
 

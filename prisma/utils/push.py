@@ -158,10 +158,6 @@ def carteltopusher2(title, subtitle, link):
 
     strjco = json.dumps(jco)
 
-    print(jco['cartel']['url'])
-
-    print(strjco)
-
     purl = pushurl.replace('%', strjco)
 
     r = requests.get(purl)
