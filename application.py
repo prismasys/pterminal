@@ -2,7 +2,9 @@ from flask import Flask, request
 from flask_cors import CORS
 from flask_restful import reqparse, abort, Api, Resource
 import prisma.api.cartelist as ct
+import prisma.utils.push as push
 import json
+import requests
 import os
 
 
@@ -49,17 +51,28 @@ class giveAllMission(Resource):
 
         return misslist
 
+class SubscribePush(Resource):
 
+    def get(self, todo_id):
+
+        raw = todo_id.replace('totona','https://fcm.googleapis.com/fcm/send/')
+
+        sub = json.loads(raw)
+
+        push.subscribe(sub)
+
+        push.pushnotif(sub)
+
+        return 'Yay'
 
 api.add_resource(giveMission, '/mission/')
 api.add_resource(giveMissionbyIndex, '/mission/index/<string:todo_id>')
-api.add_resource(giveAllMission, '/mission/all/')
+api.add_resource(SubscribePush, '/push/<string:todo_id>')
+
 
 if __name__ == '__main__':
 #    #app.run(host=os.getenv('IP', '0.0.0.0'), port=int(os.getenv('PORT', 8080)))
     app.run()
-
-
 
 
 

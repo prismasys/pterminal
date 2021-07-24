@@ -16,7 +16,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
 <script src="./js/settings.js"></script>
 <script src="./js/dashboard.js"></script>
-<script src="./js/main.js"></script>
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .logo {max-width: 3%;
@@ -90,7 +89,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
     <div id="set-list" class="w3-container w3-row">
 
-      <div id="set-1" class="w3-col m4">
+      <div id="set-1" onload="checkperm();" class="w3-col m4">
         <h4>Bounty Hunter</h4>
         <div id="set-1-op-1" class="w3-col m5">
 
@@ -100,7 +99,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
             <button onclick="activatepush();" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
               <i class="material-icons">notifications_active</i>
             </button>
-           <button onclick="displayNotification();" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+           <button onclick="triggerPushNotification();" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
               <i class="material-icons">adb</i>
             </button>
 
