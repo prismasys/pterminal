@@ -67,5 +67,32 @@ def cartelworkertosubs():
         else:
             continue
 
+def cartelworker():
 
-cartelworkertosubs()
+    print('PRISMA BOUNTY HUNTER SHERIFF\n')
+    stop = 0
+    auxcartel = []
+
+    while stop == 0:
+
+        x = cartelist.getmissionsdict()
+
+        if auxcartel == x['cartel0']['title']:
+            print('Detected Same list')
+            time.sleep(5)
+            continue
+        else:
+            auxcartel = x['cartel0']['title']
+
+            print(x['cartel0'])
+
+            for i in range(2):
+                cartelname = 'cartel{}'.format(i)
+                print(x[cartelname]['title'])
+                tit = x[cartelname]['title']
+                print(x[cartelname]['link'])
+                link = x[cartelname]['link']
+                push.pushcarteltosubs(tit, 'Click to apply', link)
+
+
+
