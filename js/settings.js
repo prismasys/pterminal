@@ -40,7 +40,7 @@ function asyncsub2(sub){
 
     var ysub = tsub.replace('https://fcm.googleapis.com/fcm/send/','totona')
 
-    var qurl = "http://127.0.0.1:5000/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     console.log(tsub);
 
