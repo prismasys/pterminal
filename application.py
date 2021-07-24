@@ -49,7 +49,6 @@ class giveAllMission(Resource):
 
         misslist = ct.getmissionsdict()
 
-
         return misslist
 
 class SubscribePush(Resource):
@@ -95,6 +94,7 @@ class CarteltoSubs(Resource):
 
 api.add_resource(giveMission, '/mission/')
 api.add_resource(giveMissionbyIndex, '/mission/index/<string:todo_id>')
+api.add_resource(giveAllMission, '/mission/all/')
 api.add_resource(SubscribePush, '/push/<string:todo_id>')
 api.add_resource(MessagetoSubs, '/msgtosubs/<string:todo_id>')
 api.add_resource(CarteltoSubs, '/carteltosubs/<string:todo_id>')
