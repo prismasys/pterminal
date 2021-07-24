@@ -5,6 +5,20 @@ import prisma.api.cartelist as cartelist
 
 def carteltosubs():
 
+    x = cartel
+
+    print(x['cartel0'])
+
+    for i in range(x):
+        cartelname = 'cartel{}'.format(i)
+        print(x[cartelname]['title'])
+        tit = x[cartelname]['title']
+        print(x[cartelname]['link'])
+        push.pushcarteltosubs(tit, 'Click to apply')
+
+
+def cartelstosubs():
+
     x = cartelist.getmissionsdict()
 
     print(x['cartel0'])

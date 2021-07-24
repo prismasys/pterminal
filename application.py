@@ -66,18 +66,31 @@ class SubscribePush(Resource):
 
         return 'Yay'
 
-class StartWorker(Resource):
 
-    def get(self):
+class MessagetoSubs(Resource):
 
-        worker.cartelworker()
+    def get(self, todo_id):
 
-        return 'WORKER ON'
+        print(todo_id)
+
+        push.msgtosubs('Prisma Devs', todo_id)
+
+        return 'Message Sended'
+
+class CarteltoSubs(Resource):
+
+    def get(self, todo_id):
+
+        print(todo_id)
+
+        push.msgtosubs('Prisma Devs',todo_id)
+
+        return 'Cartel Sended'
 
 api.add_resource(giveMission, '/mission/')
 api.add_resource(giveMissionbyIndex, '/mission/index/<string:todo_id>')
 api.add_resource(SubscribePush, '/push/<string:todo_id>')
-api.add_resource(StartWorker, '/worker/')
+api.add_resource(MessagetoSubs, '/msgtosubs/<string:todo_id>')
 
 
 if __name__ == '__main__':

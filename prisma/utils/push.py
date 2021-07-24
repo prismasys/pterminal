@@ -3,7 +3,6 @@ import os
 import requests
 
 
-
 def subscribe(subscription):
     print(subscription)
     print(subscription['keys']['p256dh'])
@@ -49,7 +48,7 @@ def pushnotif(sub):
     print('Notification Pushed!')
 
 
-def pushmsgtosubs(title, subtitle):
+def msgtosubs(title, subtitle):
 
     sublist = load_subscribers()
 
@@ -70,7 +69,7 @@ def pushmsgtosubs(title, subtitle):
         print('Notification Pushed!')
 
 
-def pushcarteltosubs(title, subtitle, url):
+def carteltosubs(title, subtitle, url):
 
     sublist = load_subscribers()
 
