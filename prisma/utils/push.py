@@ -154,7 +154,7 @@ def carteltopusher2(title, subtitle, link):
     }
 }
 
-    pushurl = 'http://127.0.0.1:5000/carteltosubs/%'
+    pushurl = 'https://prismaterminal.herokuapp.com/carteltosubs/%'
 
     strjco = json.dumps(jco)
 
