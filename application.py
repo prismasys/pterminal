@@ -72,9 +72,7 @@ class MessagetoSubs(Resource):
     def get(self, todo_id):
         print(todo_id)
 
-        # push.msgtosubs('Prisma Devs',todo_id)
-
-
+        push.msgtosubs('Prisma Devs',todo_id)
 
         return 'Message Sended'
 
