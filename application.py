@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_restful import reqparse, abort, Api, Resource
 import prisma.api.cartelist as ct
 import prisma.utils.push as push
+import prisma.utils.worker as worker
 import json
 import requests
 import os
@@ -65,9 +66,18 @@ class SubscribePush(Resource):
 
         return 'Yay'
 
+class StartWorker(Resource):
+
+    def get(self):
+
+        worker.cartelworker()
+
+        return 'WORKER ON'
+
 api.add_resource(giveMission, '/mission/')
 api.add_resource(giveMissionbyIndex, '/mission/index/<string:todo_id>')
 api.add_resource(SubscribePush, '/push/<string:todo_id>')
+api.add_resource(StartWorker, '/worker/')
 
 
 if __name__ == '__main__':
