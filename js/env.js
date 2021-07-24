@@ -71,7 +71,7 @@ function refreshsnk (){
 
 function refreshbh (){
 
-    apiurl = "https://prismaterminal.herokuapp.com/mission/all/";
+    apiurl = "https://prismaterminal.herokuapp.com/mission/";
 
     asyncrefresh(apiurl, 'bh-status');
 
