@@ -6,7 +6,6 @@
    self.registration.showNotification(data.title, {
      body: data.body,
      icon: 'https://prismasys.site/img/prisma-logo.png',
-     tag:  "push-notification-tag",
      vibrate: [500, 100, 500],
      data: {
      url: data.url
