@@ -40,7 +40,7 @@ function asyncsub2(sub){
 
     var ysub = tsub.replace('https://fcm.googleapis.com/fcm/send/','totona')
 
-    var qurl = "https://bhpush.herokuapp.com/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     console.log(tsub);
 
@@ -59,7 +59,7 @@ function asyncsub(sub){
 
     var tsub = JSON.stringify(sub);
 
-    var qurl = "https://bhpush.herokuapp.com/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     var url = qurl.replace('%',tsub);
 
