@@ -97,14 +97,6 @@ def carteltopusher(title, subtitle, link):
     klink = alink.replace(':','clitoris')
     plink = klink.replace('.', 'pezon')
 
-    json_comp = {
-        'cartel': {
-            'title': title,
-            'subtitle': subtitle,
-            'url': plink
-        }
-    }
-
     jco = {
     "cartel": {
         "title": title,
@@ -113,7 +105,7 @@ def carteltopusher(title, subtitle, link):
     }
 }
 
-    url = 'http://127.0.0.1:5000/carteltosubs'
+    url = 'https://prismaterminal.herokuapp.com/carteltosubs'
 
     r = requests.get(url, json=jco)
 
@@ -163,5 +155,7 @@ def carteltopusher2(title, subtitle, link):
     r = requests.get(purl)
 
     print('Notification Pushed!')
+
+    print(r.text)
 
     return True

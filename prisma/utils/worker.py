@@ -3,6 +3,7 @@ from os import system, name
 import time
 import prisma.utils.push as push
 import prisma.api.cartelist as cartelist
+import prisma.utils.cartelutils as cutils
 
 
 def cartelworker():
@@ -77,8 +78,16 @@ def soloworker(min):
             print('WANTED! Dead Or Alive.\n')
             auxcartel = x['cartel0']['title']
 
-            for i in range(1):
+            for i in range(2):
                 cartelname = 'cartel{}'.format(i)
+                cartel = x[cartelname]
+
+                ss = cutils.getshortsummary(cartel)
+
+                hr = cutils.gethourlyrate(cartel)
+
+                country = cutils.getcountry(cartel)
+
                 print(x[cartelname]['title'])
                 tit = x[cartelname]['title']
                 print(x[cartelname]['link'])

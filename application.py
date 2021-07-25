@@ -88,7 +88,7 @@ class CarteltoSubs(Resource):
         eurl = durl.replace('pezon', '.')
         furl = eurl.replace('labia', '?')
 
-        push.carteltosubs('Prisma Bounty Hunter', litecartel['cartel']['title'], furl)
+        push.carteltosubs(litecartel['cartel']['title'], litecartel['cartel']['subtitle'], furl)
 
         return 'Cartel Sended'
 
