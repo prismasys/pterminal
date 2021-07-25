@@ -71,6 +71,7 @@ def soloworker(min):
         if auxcartel == x['cartel0']['title']:
             print('No more cartels! Waiting for more...\n')
             print('Checking in the next {} minute(s)...'.format(min))
+            push.msgtopusher('No more cartels... Checking in a few minutes!')
             time.sleep(secs)
             continue
         else:
