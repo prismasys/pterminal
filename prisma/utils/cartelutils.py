@@ -16,15 +16,15 @@ def gethourlyrate(cartel):
 
     hr = hourlydiv[index2 + 2:index2 + 15]
 
-    hr2 = hr.replace('$','US')
+    #hr2 = hr.replace('$','US')
 
-    return hr2
+    return hr
 
 
 def getshortsummary(cartel):
     s = cartel['summary']
 
-    shortsum = s[0:70]
+    shortsum = s[0:105]
 
     nss = shortsum.replace('<br', '')
 

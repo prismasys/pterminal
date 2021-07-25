@@ -78,14 +78,15 @@ def soloworker(min):
             print('WANTED! Dead Or Alive.\n')
             auxcartel = x['cartel0']['title']
 
-            for i in range(5):
+            for i in range(1):
                 cartelname = 'cartel{}'.format(i)
 
 
 
                 hr = cutils.gethourlyrate(x[cartelname])
                 ss = cutils.getshortsummary(x[cartelname])
-                testo = hr + '. ' + ss
+                cc = cutils.getcountry(x[cartelname])
+                testo = 'Hourly Range: '+ hr + '.\n' + 'Country: ' + cc + '\n' + ss
                 print(x[cartelname]['title'])
                 tit = x[cartelname]['title']
                 print(x[cartelname]['link'])
