@@ -24,7 +24,7 @@ def gethourlyrate(cartel):
 def getshortsummary(cartel):
     s = cartel['summary']
 
-    shortsum = s[0:103]
+    shortsum = s[0:70]
 
     nss = shortsum.replace('<br', '')
 

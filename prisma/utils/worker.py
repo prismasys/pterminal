@@ -88,11 +88,15 @@ def soloworker(min):
 
                 country = cutils.getcountry(cartel)
 
+                testo = 'Hr: ' + hr + '. ' + ss + ' From: ' + country
+
+                print(testo)
+
                 print(x[cartelname]['title'])
                 tit = x[cartelname]['title']
                 print(x[cartelname]['link'])
                 link = x[cartelname]['link']
-                push.carteltopusher2(tit, 'Click to apply', link)
+                push.carteltopusher2(tit, hr, link)
                 print('Cartel Send!\n')
 
 
