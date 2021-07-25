@@ -97,6 +97,14 @@ def carteltopusher(title, subtitle, link):
     klink = alink.replace(':','clitoris')
     plink = klink.replace('.', 'pezon')
 
+    json_comp = {
+        'cartel': {
+            'title': title,
+            'subtitle': subtitle,
+            'url': plink
+        }
+    }
+
     jco = {
     "cartel": {
         "title": title,
@@ -155,7 +163,5 @@ def carteltopusher2(title, subtitle, link):
     r = requests.get(purl)
 
     print('Notification Pushed!')
-
-    print(r.text)
 
     return True

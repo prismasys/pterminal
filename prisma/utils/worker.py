@@ -80,18 +80,7 @@ def soloworker(min):
 
             for i in range(2):
                 cartelname = 'cartel{}'.format(i)
-                cartel = x[cartelname]
-
-                ss = cutils.getshortsummary(cartel)
-
-                hr = cutils.gethourlyrate(cartel)
-
-                country = cutils.getcountry(cartel)
-
-                testo = 'Hr: ' + hr + '. ' + ss + ' From: ' + country
-
-                print(testo)
-
+                hr = cutils.gethourlyrate(x[cartelname])
                 print(x[cartelname]['title'])
                 tit = x[cartelname]['title']
                 print(x[cartelname]['link'])
