@@ -78,14 +78,19 @@ def soloworker(min):
             print('WANTED! Dead Or Alive.\n')
             auxcartel = x['cartel0']['title']
 
-            for i in range(2):
+            for i in range(5):
                 cartelname = 'cartel{}'.format(i)
+
+
+
                 hr = cutils.gethourlyrate(x[cartelname])
+                ss = cutils.getshortsummary(x[cartelname])
+                testo = hr + '. ' + ss
                 print(x[cartelname]['title'])
                 tit = x[cartelname]['title']
                 print(x[cartelname]['link'])
                 link = x[cartelname]['link']
-                push.carteltopusher2(tit, hr, link)
+                push.carteltopusher2(tit, testo, link)
                 print('Cartel Send!\n')
 
 
