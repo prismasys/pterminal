@@ -1,3 +1,7 @@
+navigator.serviceWorker.register('./js/sw.js', {
+      scope: './js/'
+    });
+
 function checkperm(){
 
 if (Notification.permission === "granted") {
@@ -121,5 +125,9 @@ function activatepush(){
     });
 
     }
+
+}
+
+function subscribeto(){
 
 }
