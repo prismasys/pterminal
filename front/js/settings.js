@@ -58,14 +58,18 @@ function asyncsub2(sub){
 
     var ysub = tsub.replace('https://fcm.googleapis.com/fcm/send/','totona')
 
-    var qurl = "http://bhpush.herokuapp.com/push/%";
+    var qurl = "https://bhpush.herokuapp.com/push/%";
 
     console.log(tsub);
 
     var url = qurl.replace('%',ysub);
 
-    fetch(url, {mode: 'no-cors'})
-      .then(response => response);
+    //fetch(url, {mode: 'no-cors'})
+      //.then(response => response);
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => console.log(data));
 
      console.log('Subscription sended');
 
@@ -77,7 +81,7 @@ function asyncsub(sub){
 
     var tsub = JSON.stringify(sub);
 
-    var qurl = "http://bhpush.herokuapp.com/push/%";
+    var qurl = "https://bhpush.herokuapp.com/push/%";
 
     var url = qurl.replace('%',tsub);
 
