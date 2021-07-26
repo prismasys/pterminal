@@ -1,3 +1,21 @@
+navigator.serviceWorker.register('./js/sw.js', {
+      scope: './js/'
+    });
+
+navigator.serviceWorker.ready
+.then(function(registration) {
+  console.log('service worker registered');
+
+  return registration.pushManager.getSubscription();
+}).then(function(subscription) {
+  if (subscription) {
+    console.log('Already subscribed', subscription.endpoint);
+    setUnsubscribeButton();
+  } else {
+    setSubscribeButton();
+  }
+});
+
 function checkperm(){
 
 if (Notification.permission === "granted") {
@@ -40,7 +58,7 @@ function asyncsub2(sub){
 
     var ysub = tsub.replace('https://fcm.googleapis.com/fcm/send/','totona')
 
-    var qurl = "https://prismaterminal.herokuapp.com/push/%";
+    var qurl = "http://bhpush.herokuapp.com/push/%";
 
     console.log(tsub);
 
@@ -59,7 +77,7 @@ function asyncsub(sub){
 
     var tsub = JSON.stringify(sub);
 
-    var qurl = "https://prismaterminal.herokuapp.com/push/%";
+    var qurl = "http://bhpush.herokuapp.com/push/%";
 
     var url = qurl.replace('%',tsub);
 
@@ -121,5 +139,9 @@ function activatepush(){
     });
 
     }
+
+}
+
+function subscribeto(){
 
 }
