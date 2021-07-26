@@ -65,7 +65,7 @@ function asyncsub2(sub){
     var url = qurl.replace('%',ysub);
 
     fetch(url, {mode: 'no-cors'})
-      .then(response => response.json());
+      .then(response => response);
 
      console.log('Subscription sended');
 
