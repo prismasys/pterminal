@@ -1,3 +1,5 @@
+// THIS CLIENT MUST REQUEST TO https://prismaterminal.herokuapp.com/
+
 navigator.serviceWorker.register('./js/sw.js', {
       scope: './js/'
     });
@@ -52,13 +54,15 @@ function urlBase64ToUint8Array(base64String) {
 
 function asyncsub2(sub){
 
+     // THIS CLIENT MUST REQUEST TO https://prismaterminal.herokuapp.com/
+
     document.getElementById('push-status').innerHTML = "🟠";
 
     var tsub = JSON.stringify(sub);
 
     var ysub = tsub.replace('https://fcm.googleapis.com/fcm/send/','totona')
 
-    var qurl = "https://bhpush.herokuapp.com/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     console.log(tsub);
 
@@ -81,7 +85,7 @@ function asyncsub(sub){
 
     var tsub = JSON.stringify(sub);
 
-    var qurl = "https://bhpush.herokuapp.com/push/%";
+    var qurl = "https://prismaterminal.herokuapp.com/push/%";
 
     var url = qurl.replace('%',tsub);
 
