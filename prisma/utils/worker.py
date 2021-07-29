@@ -1,5 +1,5 @@
 from os import system, name
-
+import os
 import time
 import prisma.utils.push as push
 import prisma.api.cartelist as cartelist
@@ -60,19 +60,26 @@ def soloworker(min):
 
     secs = min*60
 
-    print('PRISMA BOUNTY HUNTER SHERIFF\n')
+
+
+
     stop = 0
     auxcartel = []
 
     while stop == 0:
 
+        os.system('cls' if os.name == 'nt' else 'clear')
+
         x = cartelist.getmissionsdict()
+
+        print('PRISMA BOUNTY HUNTER SHERIFF\n')
 
         if auxcartel == x['cartel0']['title']:
             print('No more cartels! Waiting for more...\n')
             print('Checking in the next {} minute(s)...'.format(min))
-            push.msgtopusher('No more cartels... Checking in a few minutes!')
+            push.msgtopusher('No new cartels yet... Checking in the next {} minute(s).'.format(min))
             time.sleep(secs)
+
             continue
         else:
             print('I found a cartel!.\n')

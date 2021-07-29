@@ -4,6 +4,6 @@ import prisma.utils.push as push
 import prisma.api.cartelist as cartelist
 import prisma.utils.worker as worker
 
-worker.soloworker(3)
+worker.soloworker(5)
 
 
