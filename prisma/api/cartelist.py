@@ -17,9 +17,9 @@ def getmissions():
 
     return cartels
 
-def getmissionsdict():
+def getmissionsdictv1():
 
-    feeds = feed.upworkfeed()
+    feeds = feed.upworkfeedv1()
 
     cartels = []
 
@@ -30,5 +30,26 @@ def getmissionsdict():
         cartels.append(miss)
         cartelv = 'cartel{}'.format(i)
         cartelsdict[cartelv] = miss.entry
+
+    return cartelsdict
+
+def getmissionsdict():
+
+    feeds = feed.upworkfeed()
+
+    cartels = []
+
+    cartelsdict = {}
+
+    aux = 0
+
+    for items in feeds:
+        for i in range(len(items.entries)):
+            miss = mission(items.entries[i])
+            cartels.append(miss)
+            aux = aux + 1
+            cartelv = 'cartel{}'.format(aux)
+            cartelsdict[cartelv] = miss.entry
+
 
     return cartelsdict
